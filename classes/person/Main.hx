@@ -53,6 +53,10 @@ class Employee extends Person {
         this.salary = salary;
     }
 
+    public function getJob(): String {
+        return this.job;
+    }
+
     public function getSalary(): Float {
         return this.salary;
     }
