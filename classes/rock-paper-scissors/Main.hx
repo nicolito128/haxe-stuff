@@ -36,23 +36,23 @@ class Game {
         trace("Game created!");
         trace("Enter a move (e.g. 'rock', 'paper', 'scissors):");
 
-        var playerMove = Sys.stdin().readLine();
-        var computerMove = this.randStrMove();
+        var playerMoveStr = Sys.stdin().readLine();
+        var computerMoveStr = this.randStrMove();
 
-        trace("You chose: " + playerMove);
-        trace("Computer chose: " + computerMove);
-        this.play(playerMove, computerMove);
+        trace("You chose: " + playerMoveStr);
+        trace("Computer chose: " + computerMoveStr);
+        this.play(this.parseStrToMove(playerMoveStr), this.parseStrToMove(computerMoveStr));
     }
 
-    public function evalMove(move: String): Move {
-        if (!this.moves.exists(move)) {
+    public function parseStrToMove(str: String): Move {
+        if (!this.moves.exists(str)) {
             return Move.INVALID;
         }
 
-        return this.moves.get(move);
+        return this.moves.get(str);
     }
 
-    public function evalResult(move1: Move, move2: Move): Result {
+    public function evalMoves(move1: Move, move2: Move): Result {
         if (move1 == Move.INVALID || move2 == Move.INVALID) {
             return Result.INVALID;
         }
@@ -89,7 +89,7 @@ class Game {
     }
 
     public function randStrMove(): String {
-        var rand = Math.floor(Math.random() * 3) + 1;
+        var rand = Math.floor(Math.random() * 3 + 1);
         var randMove: String;
 
         switch (rand) {
@@ -106,10 +106,8 @@ class Game {
         return randMove;
     }
 
-    public function play(first: String, second: String): Void {
-        var move1 = this.evalMove(first);
-        var move2 = this.evalMove(second);
-        var result = this.evalResult(move1, move2);
+    public function play(player1Move: Move, player2Move: Move): Void {
+        var result = this.evalMoves(player1Move, player2Move);
 
         switch (result) {
             case Result.Tie:
