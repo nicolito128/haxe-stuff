@@ -34,14 +34,22 @@ class Game {
 
     public function start(): Void {
         trace("Game created!");
-        trace("Enter a move (e.g. 'rock', 'paper', 'scissors):");
 
-        var playerMoveStr = Sys.stdin().readLine();
-        var computerMoveStr = this.randStrMove();
+        while (true) {
+            trace("Enter a move (e.g. 'rock', 'paper', 'scissors') or write 'close':");
 
-        trace("You chose: " + playerMoveStr);
-        trace("Computer chose: " + computerMoveStr);
-        this.play(this.parseStrToMove(playerMoveStr), this.parseStrToMove(computerMoveStr));
+            var playerMoveStr = Sys.stdin().readLine();
+            if (playerMoveStr == "close") {
+                trace("Game closed!");
+                break;
+            }
+
+            var computerMoveStr = this.randStrMove();
+
+            trace("You chose: " + playerMoveStr);
+            trace("Computer chose: " + computerMoveStr);
+            this.play(this.parseStrToMove(playerMoveStr), this.parseStrToMove(computerMoveStr));
+        }
     }
 
     public function parseStrToMove(str: String): Move {
