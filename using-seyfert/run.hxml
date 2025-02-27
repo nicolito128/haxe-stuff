@@ -1,0 +1,2 @@
+--cmd haxe build.hxml
+--cmd node bin/js/main.js

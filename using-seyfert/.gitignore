@@ -1,0 +1,11 @@
+# Output
+bin/js/*.js
+
+# Environment
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Deps
+node_modules/

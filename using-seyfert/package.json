@@ -1,0 +1,19 @@
+{
+  "name": "using-seyfert",
+  "version": "1.0.0",
+  "description": "Trying the Seyfert library with Haxe.",
+  "license": "MIT",
+  "author": "Nicolas A. Serna",
+  "type": "commonjs",
+  "main": "bin/js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "seyfert": "^2.2.1-dev-13556253089.0"
+  },
+  "devDependencies": {
+    "haxe": "^5.2.1",
+    "typescript": "^5.7.3"
+  }
+}

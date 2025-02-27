@@ -1,0 +1,5 @@
+--library hxnodejs
+-C src
+--main Main
+-D js-es=6
+--js ../bin/js/main.js
