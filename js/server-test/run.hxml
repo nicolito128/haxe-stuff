@@ -1,1 +1,1 @@
--cmd node main.js
+--cmd node bin/js/main.js

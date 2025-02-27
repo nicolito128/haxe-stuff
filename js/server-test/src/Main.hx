@@ -1,3 +1,4 @@
+
 class Main {
     static function main() {
       // Configure our HTTP server to respond with Hello World to all requests.
