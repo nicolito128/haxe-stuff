@@ -1,1 +1,2 @@
--cmd haxe --main Main --interp
+--class-path src
+--run Main
